@@ -1,0 +1,12 @@
+torch>=2.0
+torchvision
+timm
+opencv-python
+Pillow
+numpy
+scipy
+streamlit
+matplotlib
+scikit-learn
+tqdm
+pytest

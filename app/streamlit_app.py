@@ -248,6 +248,7 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
+    st.caption("Se fechar este painel, clique na seta (>) no canto superior esquerdo para reabri-lo.")
     st.markdown("---")
     threshold = st.slider(
         "Limiar de decisão", min_value=10, max_value=90, value=50, step=5,
@@ -444,7 +445,7 @@ if _has_result and uploaded is not None:
                 ), unsafe_allow_html=True)
 
         # ----- Análise de frequência (expansível) ----- #
-        with st.expander("Análise de Frequência"):
+        with st.expander("▶ Análise de Frequência"):
             img_bgr = cv2.imread(str(tmp_path))
             fft_col, info_col = st.columns([3, 2], gap="medium")
             with fft_col:

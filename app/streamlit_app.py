@@ -176,7 +176,7 @@ st.markdown("""<style>
 html, body, [class*="st-"] { font-family: 'Inter', system-ui, sans-serif !important; }
 .block-container { padding-top: 0.5rem !important; padding-bottom: 2rem !important; max-width: 1150px; }
 .stApp { background: linear-gradient(170deg, #0a0a1a 0%, #0f0f2e 40%, #0a0a1a 100%) !important; }
-#MainMenu, footer, header { visibility: hidden; }
+#MainMenu, footer { visibility: hidden; }
 
 .ds-card {
     background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
@@ -445,7 +445,7 @@ if _has_result and uploaded is not None:
                 ), unsafe_allow_html=True)
 
         # ----- Análise de frequência (expansível) ----- #
-        with st.expander("▶ Análise de Frequência"):
+        with st.expander("Analise de Frequencia (FFT)"):
             img_bgr = cv2.imread(str(tmp_path))
             fft_col, info_col = st.columns([3, 2], gap="medium")
             with fft_col:

@@ -176,7 +176,14 @@ st.markdown("""<style>
 html, body, [class*="st-"] { font-family: 'Inter', system-ui, sans-serif !important; }
 .block-container { padding-top: 0.5rem !important; padding-bottom: 2rem !important; max-width: 1150px; }
 .stApp { background: linear-gradient(170deg, #0a0a1a 0%, #0f0f2e 40%, #0a0a1a 100%) !important; }
-#MainMenu, footer { visibility: hidden; }
+footer { visibility: hidden; }
+
+/* Esconde nomes de ícones Material Symbols que vazam como texto */
+[data-testid="stIconMaterial"], .material-symbols-rounded {
+    font-size: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+}
 
 .ds-card {
     background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);

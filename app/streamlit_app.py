@@ -228,20 +228,6 @@ section[data-testid="stSidebar"] { background: linear-gradient(180deg, #08081a, 
 .ds-footer { text-align: center; padding: 40px 0 15px; color: #334155; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.04); margin-top: 40px; }
 .ds-footer a { color: #7c3aed; text-decoration: none; }
 
-/* Fix botão upload com texto sobreposto (bug i18n Streamlit) */
-[data-testid="stFileUploader"] button {
-    font-size: 0 !important;
-    color: transparent !important;
-}
-[data-testid="stFileUploader"] button * {
-    font-size: 0 !important;
-    color: transparent !important;
-}
-[data-testid="stFileUploader"] button::after {
-    content: "Escolher";
-    font-size: 14px !important;
-    color: #333 !important;
-}
 </style>""", unsafe_allow_html=True)
 
 
@@ -335,6 +321,17 @@ st.markdown(
     'Ensemble 3 técnicas</span></div></div>'
     '<div style="height:2px;background:linear-gradient(90deg,transparent,'
     'rgba(124,58,237,0.15),rgba(59,130,246,0.15),transparent);margin:20px 0 25px;"></div>',
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    '<div style="max-width:800px;margin:0 auto 20px;padding:12px 20px;border-radius:10px;'
+    'background:rgba(234,179,8,0.06);border:1px solid rgba(234,179,8,0.15);'
+    'color:#fbbf24;font-size:13px;line-height:1.6;">'
+    '<strong>Nota:</strong> Modelo treinado em faces geradas por StyleGAN. '
+    'Para deepfakes de geradores mais recentes (Midjourney, DALL-E, Stable Diffusion, Gemini), '
+    'a detecção pode ser limitada. Versões futuras incluirão datasets mais abrangentes.'
+    '</div>',
     unsafe_allow_html=True,
 )
 
@@ -575,6 +572,23 @@ for col, (val, label) in zip([a1, a2, a3, a4, a5, a6], metrics_data):
             f'</div>',
             unsafe_allow_html=True,
         )
+
+st.markdown(
+    '<div style="max-width:800px;margin:20px auto 0;padding:18px 24px;border-radius:12px;'
+    'background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);'
+    'color:#94a3b8;font-size:13px;line-height:1.8;">'
+    '<strong style="color:#e2e8f0;">Limitações e Roadmap</strong><br>'
+    'O modelo atual foi treinado exclusivamente com faces geradas por <strong>StyleGAN</strong> '
+    '(dataset 140k Real and Fake Faces). Deepfakes produzidos por geradores mais recentes '
+    'como Midjourney, DALL-E 3, Stable Diffusion e Gemini podem não ser detectados com a '
+    'mesma precisão.<br><br>'
+    '<strong style="color:#e2e8f0;">Roadmap:</strong> '
+    'Retreinar com datasets de diffusion models, '
+    'suporte a detecção em video (frame-by-frame + temporal), '
+    'API REST com FastAPI e deploy na Hugging Face Spaces.'
+    '</div>',
+    unsafe_allow_html=True,
+)
 
 # ====================================================================== #
 # Footer
